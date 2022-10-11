@@ -3,25 +3,6 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-Kake:=3
-Test:= 14
-::ppn4::
-	{
-	Send, So this will replace 'ppn3 + 1', but only after I press space after it?
-	return
-	}
-
-#n::
-	{
-	MsgBox, Opening
-	Run, notepad.exe
-	WinActivate, Untitled - Notepad
-	WinWaitActive, Untitled - Notepad
-	Send, 7 lines{!}{Enter}
-	SendInput, inside the {#} {+} N hotkey
-	return
-	}
-
 ::bbb::
 	{
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -34,16 +15,23 @@ Test:= 14
 	return
 	}
 
-::beg::
-	If (Test != Kake)
+::imp::
 	{
-	MsgBox, it worked again again
+	InputBox, OutputVar, Question 1, what is your mom's name?
+	if (OutputVar = "gay")
+		MsgBox, Your mom is %OutputVar%
+	InputBox, GAY, Q2, Do you like cats?
+	if (GAY = "yes")
+		MsgBox, Your mom %OutputVar%, and probably has cats
+	else
+	MsgBox, dats gay
 	return
 	}
 
-::imp::
+::ppn3::
 	{
-	
+	M := ["CLog","Ben"]
+	MsgBox, %M%
 	return
 	}
 
