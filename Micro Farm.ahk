@@ -5,12 +5,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::bbb::
 	{
+	InputBox, OutputVar, Starting FarmMan, this will take a few minutes, are you sure?
+	if (OutputVar = "yes", "y", "ye")
+		MsgBox, Comencing 
+	else
+	MsgBox, stopping
+
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-	WinActivate, New Tab - Ab
-	WinWaitActive, New Tab - Ab
 	Sleep, 3000
-	Send, Does this enter as in completes search? {Enter}
-	
+	;#IfWinActivate, New Tab - Ab - Microsoft Edge
+		Send, Does this enter as in completes search? {Enter}
 
 	return
 	}
@@ -30,8 +34,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::ppn3::
 	{
-	M := ["CLog","Ben"]
-	MsgBox, %M%
+	M := {"CLog": "gross","Ben": "yes"}
+	MsgBox, "value := ["CLog"]"
 	return
 	}
 
