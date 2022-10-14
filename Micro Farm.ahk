@@ -5,11 +5,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::bbb::
 	{
-	InputBox, OutputVar, Starting FarmMan, this will take a few minutes, are you sure?
-	if (OutputVar = "yes", "y", "ye")
+	InputBox, OutputVar, Starting FarmMan"," this will take a few minutes, are you sure?
+	if (OutputVar = "yes")
 		MsgBox, Comencing 
 	else
-	MsgBox, stopping
+		{
+		MsgBox, stopping
+		ExitApp
+		}
+	
 
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Sleep, 3000
@@ -34,8 +38,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::ppn3::
 	{
-	M := {"CLog": "gross","Ben": "yes"}
-	MsgBox, "value := ["CLog"]"
+	M := ["Clog": "gross", "Ben": "yes"]
+	Bed := ControlGetText, M, CLog
+	MsgBox, %Bed%
 	return
 	}
 
