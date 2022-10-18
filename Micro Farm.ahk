@@ -5,12 +5,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::bbb::
 	{
+
 	InputBox, OutputVar, Starting FarmMan"," this will take a few minutes, are you sure?
 	if (OutputVar = "yes")
 		MsgBox, Comencing 
 	else
 		{
 		MsgBox, stopping
+		Suspend 
 		ExitApp
 		}
 	
@@ -35,12 +37,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	MsgBox, dats gay
 	return
 	}
-
+M := {"Clog": "gross", "Ben": "yes"}
 ::ppn3::
 	{
-	M := ["Clog": "gross", "Ben": "yes"]
-	Bed := ControlGetText, M, CLog
-	MsgBox, %Bed%
+	Scent := M["Clog"]
+	MsgBox, %Scent%
 	return
 	}
 
