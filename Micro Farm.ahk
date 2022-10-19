@@ -6,17 +6,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ::bbb::
 	{
 
-	InputBox, OutputVar, Starting FarmMan"," this will take a few minutes, are you sure?
-	if (OutputVar = "yes")
-		MsgBox, Comencing 
-	else
-		{
-		MsgBox, stopping
-		Suspend 
-		ExitApp
-		}
+	MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes`, are you sure?, 5
 	
-
+	IfMsgBox, No
+   		Return
+	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Sleep, 3000
 	;#IfWinActivate, New Tab - Ab - Microsoft Edge
@@ -37,13 +31,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	MsgBox, dats gay
 	return
 	}
-M := {"Clog": "gross", "Ben": "yes"}
+
+
 ::ppn3::
 	{
+	M := {"Clog": "gross", "Ben": "yes"}
 	Scent := M["Clog"]
 	MsgBox, %Scent%
 	return
 	}
+
 
 #SingleInstance Force
 
