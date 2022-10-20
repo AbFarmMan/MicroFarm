@@ -2,6 +2,8 @@
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#n::
+	ExitApp
 
 ::bbb::
 	{
@@ -12,10 +14,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
    		Return
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-	Sleep, 3000
-	;#IfWinActivate, New Tab - Ab - Microsoft Edge
+	Loop, 30
+		{
+		;ImageSearch, CPx, CPy, 
+		
+		Sleep, 3000
+		
 		Send, Does this enter as in completes search? {Enter}
-
+		}
 	return
 	}
 
