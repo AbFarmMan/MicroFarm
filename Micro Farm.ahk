@@ -2,8 +2,16 @@
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+				;AHK Version "1.1.34.04"
+	
+	M := {"Clog": "gross", "Ben": "yes"}
+
 #n::
-	ExitApp
+	MsgBox, 1, Stopper, Stopping, 5
+	
+	IfMsgBox, Ok
+		ExitApp
+	return
 
 ::bbb::
 	{
@@ -40,12 +48,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 ::ppn3::
-	{
-	M := {"Clog": "gross", "Ben": "yes"}
-	Scent := M["Clog"]
+						
+	Scent := M["Clog"]			; BRACKETS CREATE A SCOPE BARRIER 
 	MsgBox, %Scent%
 	return
-	}
+	
 
 
 #SingleInstance Force
