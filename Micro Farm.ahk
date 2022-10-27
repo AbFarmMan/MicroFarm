@@ -33,16 +33,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	return
 	}
 
-::imp::
+::^a::
 	{
-	InputBox, OutputVar, Question 1, what is your mom's name?
-	if (OutputVar = "gay")
-		MsgBox, Your mom is %OutputVar%
-	InputBox, GAY, Q2, Do you like cats?
-	if (GAY = "yes")
-		MsgBox, Your mom %OutputVar%, and probably has cats
-	else
-	MsgBox, dats gay
+	
+	ImageSearch, TL, BR, 0, 0, A_ScreenWidth, A_ScreenHeight, *30 C:\Users\rlkon\Pictures\BingCapture.PNG
+	if (ErrorLevel = 0)
+	MsgBox, FOUND!
 	return
 	}
 
