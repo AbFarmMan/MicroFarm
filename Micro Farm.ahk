@@ -23,22 +23,21 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Loop, 30
-		{
-		;ImageSearch, CPx, CPy, 
-		
+		{ 
 		Sleep, 3000
-		
 		Send, Does this enter as in completes search? {Enter}
 		}
 	return
 	}
 
-::^a::
+::^!a::
 	{
 	
 	ImageSearch, TL, BR, 0, 0, A_ScreenWidth, A_ScreenHeight, *30 C:\Users\rlkon\Pictures\BingCapture.PNG
+	
 	if (ErrorLevel = 0)
 	MsgBox, FOUND!
+
 	return
 	}
 
