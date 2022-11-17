@@ -30,16 +30,18 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	return
 	}
 
-::^!a::
-	{
+#z::
 	
-	ImageSearch, TL, BR, 0, 0, A_ScreenWidth, A_ScreenHeight, *30 C:\Users\rlkon\Pictures\BingCapture.PNG
+	
+	ImageSearch, TL, BR, 0, 0, A_ScreenWidth, A_ScreenHeight, *50 C:\Users\rlkon\Pictures\BingCapture.PNG
 	
 	if (ErrorLevel = 0)
-	MsgBox, FOUND!
-
+		MsgBox, FOUND!
+	
+	else 
+		MsgBox, %ErrorLevel%
 	return
-	}
+	
 
 
 ::ppn3::
