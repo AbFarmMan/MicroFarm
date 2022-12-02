@@ -23,7 +23,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Sleep, 2000
-	Send, !{Space}x
+	Send, !{Space Down}x{Space Up}
 	Sleep, 2000
 	Send, Does this enter as in completes search? Can I really do this over and over until the system gives a punch of points? {Enter}
 	Loop, 35
