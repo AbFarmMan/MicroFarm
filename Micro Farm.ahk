@@ -32,6 +32,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.15, 1, 3
 		Send, {BS}{Enter}
 		}
+	Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
+	Loop, 25
+		{ 
+		Sleep, 2000
+		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.15, 1, 3
+		Send, {BS}{Enter}
+		}
 	return
 	
 
