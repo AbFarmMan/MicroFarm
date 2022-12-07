@@ -22,8 +22,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
    		Return
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-	Sleep, 2000
-	Send, !{Space Down}x{Space Up}
+	Sleep, 4000
+	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+	Send, {Alt Down}{Space Down}x{Space Up}{Alt Up}
 	Sleep, 2000
 	Send, Does this enter as in completes search? Can I really do this over and over until the system gives a punch of points? {Enter}
 	Loop, 35
@@ -33,12 +34,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		Send, {BS}{Enter}
 		}
 	Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
-	Loop, 25
+	Sleep, 2000
+	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+	Loop, 20
 		{ 
 		Sleep, 2000
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
 		Send, {BS}{Enter}
 		}
+	
 	Send, {Ctrl Down}w{Ctrl Up}
 	return
 	
@@ -51,23 +55,27 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
    		Return
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-	Sleep, 2000
-	Send, !{Space Down}x{Space Up}
+	Sleep, 4000
+	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.15, 1, 3
+	Send, {Alt Down}{Space Down}x{Space Up}{Alt Up}
 	Sleep, 2000
 	Send, Does this enter as in completes search? Can I really do this over and over until the system gives a punch of points? {Enter}
-	Loop, 3
+	Loop, 4
 		{ 
 		Sleep, 2000
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.15, 1, 3
 		Send, {BS}{Enter}
 		}
 	Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
-	Loop, 2
+	Sleep, 2000
+	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+	Loop, 4
 		{ 
 		Sleep, 2000
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
 		Send, {BS}{Enter}
 		}
+	
 	Send, {Ctrl Down}w{Ctrl Up}
 	return
 
