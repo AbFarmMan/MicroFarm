@@ -56,6 +56,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Sleep, 4000
+	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+	Sleep, 4000
 	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.065, 1, 3
 	Send, {Alt Down}{Space Down}x{Space Up}{Alt Up}
 	Sleep, 2000
@@ -87,7 +89,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::plp::	
 
-	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.065, 1, 3
+	MouseClick, L, A_ScreenWidth*0.96, A_ScreenHeight*.035, 1, 3
 	return
 
 #SingleInstance Force
