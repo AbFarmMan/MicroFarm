@@ -88,8 +88,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	return
 
 ::plp::	
-
-	MouseClick, L, A_ScreenWidth*0.96, A_ScreenHeight*.035, 1, 3
+	
+	if WinExist("Microsoft Edge")
+	WinActivate 
+	WinMaximize
 	return
 
 #SingleInstance Force
