@@ -89,9 +89,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::plp::	
 	
-	if WinExist("Microsoft Edge")
+	if WinExist("Microsoft Edge, New Tab")
 	WinActivate 
-	WinMaximize
+	;	WinExist("A")
+	WinMaximize, "Microsoft Edge"
 	return
 
 #SingleInstance Force
