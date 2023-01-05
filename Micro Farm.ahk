@@ -23,8 +23,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Sleep, 4000
-	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.065, 1, 3
-	Send, {Alt Down}{Space Down}x{Space Up}{Alt Up}
+	WinMaximize, ahk_class Chrome_WidgetWin_1
 	Sleep, 2000
 	Send, Does this enter as in completes search? Can I really do this over and over until the system gives a punch of points? {Enter}
 	Loop, 35
@@ -36,7 +35,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
 	Sleep, 2000
 	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-	Loop, 20
+	Loop, 25
 		{ 
 		Sleep, 2000
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
@@ -49,37 +48,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::zxc::
 	
-	MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes`, are you sure?, 5
 	
-	IfMsgBox, No
-   		Return
-	
-	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-	Sleep, 4000
-	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-	Sleep, 4000
-	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.065, 1, 3
-	Send, {Alt Down}{Space Down}x{Space Up}{Alt Up}
-	Sleep, 2000
-	Send, Does this enter as in completes search? Can I really do this over and over until the system gives a punch of points? {Enter}
-	Loop, 5
-		{ 
-		Sleep, 2000
-		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.15, 1, 3
-		Send, {BS}{Enter}
-		}
-	Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
-	Sleep, 2000
-	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-	Loop, 5
-		{ 
-		Sleep, 2000
-		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-		Send, {BS}{Enter}
-		}
-	
-	Send, {Ctrl Down}w{Ctrl Up}
-	return
+
 
 ::ppn3::
 						
@@ -89,10 +59,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::plp::	
 	
-	if WinExist("Microsoft Edge, New Tab")
-	WinActivate 
-	;	WinExist("A")
-	WinMaximize, "Microsoft Edge"
+	WinMaximize, ahk_class Chrome_WidgetWin_1
 	return
 
 #SingleInstance Force
