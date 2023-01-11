@@ -3,16 +3,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 				;AHK Version "1.1.34.04"
-	
-	M := {"Clog": "gross", "Ben": "yes"}
 
-#n::
-	MsgBox, 1, Stopper, Stopping, 5
-	
-	IfMsgBox, Ok
-		ExitApp
-	return
-
+M := {"Clog": "gross", "Ben": "yes"}
 ::bbb::
 	
 
@@ -37,19 +29,38 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
 	Loop, 25
 		{ 
+		Sleep, 1000
+		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
 		Sleep, 2000
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+		Sleep, 2000
 		Send, {BS}{Enter}
 		}
 	
 	Send, {Ctrl Down}w{Ctrl Up}
 	return
-	
 
+#n::
+	MsgBox, 1, Stopper, Stopping, 5
+	
+	IfMsgBox, Ok
+		ExitApp
+	return
+	
 ::zxc::
 	
-	
-
+	;Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
+	;Sleep, 5000
+	Loop, 5
+		{ 
+		Sleep, 1000
+		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+		Sleep, 2000
+		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+		Sleep, 2000
+		Send, {BS}{Enter}
+		}
+	return
 
 ::ppn3::
 						
@@ -59,8 +70,14 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ::plp::	
 	
-	WinMaximize, ahk_class Chrome_WidgetWin_1
+	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.3, 1, 3
 	return
+
+::lll::
+
+	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+	return
+
 
 #SingleInstance Force
 
