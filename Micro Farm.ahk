@@ -49,19 +49,7 @@ M := {"Clog": "gross", "Ben": "yes"}
 	
 ::zxc::
 	
-	;Send, {Ctrl Down}{Shift Down}i{Ctrl Up}{Shift Up}
-	;Sleep, 5000
-	Loop, 5
-		{ 
-		Sleep, 1000
-		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-		Sleep, 2000
-		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-		Sleep, 2000
-		Send, {BS}{Enter}
-		}
-	return
-
+	
 ::ppn3::
 						
 	Scent := M["Clog"]			; BRACKETS CREATE A SCOPE BARRIER 
@@ -70,13 +58,8 @@ M := {"Clog": "gross", "Ben": "yes"}
 
 ::plp::	
 	
-	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.3, 1, 3
-	return
 
 ::lll::
-
-	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-	return
 
 
 #SingleInstance Force
