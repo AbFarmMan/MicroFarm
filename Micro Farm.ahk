@@ -3,15 +3,13 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 				;AHK Version "1.1.34.04"
-
 M := {"Clog": "gross", "Ben": "yes"}
-::bbb::
-	
 
+	
 	MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes`, are you sure?, 5
 	
 	IfMsgBox, No
-   		Return
+   		ExitApp
 	
 	Run, "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 	Sleep, 4000
@@ -38,8 +36,7 @@ M := {"Clog": "gross", "Ben": "yes"}
 		}
 	
 	Send, {Ctrl Down}w{Ctrl Up}
-	return
-
+	ExitApp
 #n::
 	MsgBox, 1, Stopper, Stopping, 5
 	
@@ -47,21 +44,8 @@ M := {"Clog": "gross", "Ben": "yes"}
 		ExitApp
 	return
 	
-::zxc::
 	
-	
-::ppn3::
-						
-	Scent := M["Clog"]			; BRACKETS CREATE A SCOPE BARRIER 
-	MsgBox, %Scent%
-	return
-
-::plp::	
-	
-
-::lll::
-
-
+;Brackets create a scope barrier 
 #SingleInstance Force
 
 
