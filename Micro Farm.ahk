@@ -5,8 +5,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 				;AHK Version "1.1.34.04"
 M := {"Clog": "gross", "Ben": "yes"}
 
-	
-	MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes`, are you sure?, 5
+
+
+MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes`, are you sure?, 5
 	
 	IfMsgBox, No
    		ExitApp
@@ -27,12 +28,14 @@ M := {"Clog": "gross", "Ben": "yes"}
 	MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
 	Loop, 25
 		{ 
+		MouseClick, L, A_ScreenWidth*0.05, A_ScreenHeight*.07, 1, 3
 		Sleep, 1000
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-		Sleep, 2000
+		Sleep, 1500
 		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
-		Sleep, 2000
+		Sleep, 1500
 		Send, {BS}{Enter}
+		Sleep, 2500
 		}
 	
 	Send, {Ctrl Down}w{Ctrl Up}
@@ -44,8 +47,21 @@ M := {"Clog": "gross", "Ben": "yes"}
 		ExitApp
 	return
 	
-	
-;Brackets create a scope barrier 
+::test::
+	x=0
+	Loop, 5
+		{ 
+		;x+1
+		Sleep, 500
+		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+		Sleep, 500
+		MouseClick, L, A_ScreenWidth*0.25, A_ScreenHeight*.2, 1, 3
+		Sleep, 500
+		Send, {BS}{Enter}
+		}
+	MsgBox, %x%
+;Brackets create a scope barrier
+;MouseClick, L, A_ScreenWidth*0.05, A_ScreenHeight*.07, 1, 3 (REFRESH ON SCREEN) 
 #SingleInstance Force
 
 
