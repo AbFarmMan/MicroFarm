@@ -7,7 +7,7 @@ M := {"Clog": "gross", "Ben": "yes"}
 
 
 
-MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes`, are you sure?, 5
+MsgBox, 4, MicroFarm, Starting FarmMan`, this will take a few minutes (PRESS WIN + N TO STOP CODE)`, Do you want to continue?, 15
 	
 	IfMsgBox, No
    		ExitApp
